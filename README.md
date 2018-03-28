@@ -3,7 +3,7 @@ This is a boilerplate for basic static websites. Other boilerplates I have publi
 
 ## Table of Contents
 * Installation
-..* Running
+⋅⋅* Running
 * Usage
 
 ## Installation
