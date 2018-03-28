@@ -5,7 +5,13 @@ module.exports = {
     entry: ['babel-polyfill', 'react-hot-loader/patch', './frontend/index.js'],
     module: {
         rules: [
-            { test: /\.js?$/, loader: 'babel-loader', exclude: /node_modules/ },
+            { test: /\.js?$/,
+              loader: 'babel-loader',
+              exclude: /node_modules/,
+              query: {
+                  presets: ['es2015', 'react']
+              }
+            },
             { test: /\.s?css$/, loader: 'style-loader!css-loader!sass-loader' },
         ],
     },

@@ -9,7 +9,11 @@ import PropTypes from 'prop-types';
 // Example: import navbars, footers, and notifications
 
 // Import page components
+import NavBar from '../components/shared/NavBar';
 import Home from '../components/Home';
+import About from '../components/About';
+import Portfolio from '../components/Portfolio';
+
 import NotFound from '../components/NotFound';
 
 // Import actions
@@ -20,29 +24,17 @@ class AppContainer extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    axios.get('/api/sync')
-      .then((resp) => {
-        if (!resp.data.success) {
-          // In this case, the redux state and the persist state
-          // are NOT synced, so you want to start again and wipe
-          // redux state. This may mean activating any actions
-          // that are imported
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  }
-
   render() {
     return(
       <div>
         <BrowserRouter>
           <div>
+            <NavBar />
             <Switch>
               {/*Base Home route*/}
               <Route exact path='/' component={Home} />
+              <Route exact path='/about' component={About} />
+              <Route exact path='/portfolio' component={Portfolio} />
 
               {/* If no path matches, show 404 error*/}
               <Route exact path='/*' component={NotFound} />

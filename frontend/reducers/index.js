@@ -1,17 +1,11 @@
 // Import frameworks
-import { persistCombineReducers } from 'redux-persist';
-import storage from 'redux-persist/es/storage';
+import { combineReducers } from 'redux';
 
 // Import reducers
 
-// Config necessary for state persistance
-const config = {
-  key: 'primary',
-  storage,
-};
 
 // Root reducer combines all separate reducers and calls appropriate one
-const rootReducer = persistCombineReducers(config, {
+const rootReducer = combineReducers({
   // stateName: reducerImported
 });
 
