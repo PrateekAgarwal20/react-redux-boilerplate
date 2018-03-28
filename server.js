@@ -1,6 +1,6 @@
 // Import external frameworks
 const path = require('path');
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
@@ -25,7 +25,7 @@ const api = require('./backend/routes');
 
 // Storage of information
 const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
+//const MongoStore = require('connect-mongo')(session);
 
 // Connecting to mongo
 //mongoose.connect(MONGODB_URI);
@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({ extended: false, limit: '50mb' }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret,
-  store: new MongoStore({mongooseConnection: mongoose.connection}),
+//  store: new MongoStore({mongooseConnection: mongoose.connection}),
   resave: true,
   saveUninitialized: true,
 }));
