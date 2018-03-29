@@ -7,8 +7,8 @@ This is a boilerplate for basic static websites. Other boilerplates I have publi
 * Usage
   * Making a new page
   * Adding CSS
+  * Adding a state changing action
   * Adding MongoDB Integration
-  * Adding an state changing action
 * Stack Used
 
 
@@ -28,8 +28,18 @@ npm run dev
 The main purpose of this boilerplate is for making static webpages. For more dynamic frameworks, see other boilerplates given in other repos in [my profile](https://github.com/PrateekAgarwal20).
 
 ### Making A New Page
+Within `./frontend/components/` add a new javascript file that corresponds with the page you want to render. See the existing examples for more detail.
+
+Make sure to add a route within `./frontend/containers/AppContainer.js` to render the component you just created and a means to access it, by a `<Link\>` element or otherwise.
 
 ### Adding CSS
+Currently, all css files are funneled through the `base.scss` file. All other scss files are imported into this file. For each distinct component with unique styling, create a new scss file. Inside the component, wrap the contents of the render div with the name of your scss file. For example, if you want to apply certain styles to everything in the NavBar:
+1. Make a `nav.scss` file and add it as an import in `base.scss`
+2. Wrap the entire return div in `NavBar.js` with `<nav><nav \>` tags.
+For more general styles, add them to `base.scss` and apply them using the `className` field in html/jsx components.
+
+### Adding A State Changing Action
+// TODO
 
 ### Adding MongoDB Integration
 It's imperative to add an `env.sh` file. These files are already screened from git in the `.gitignore` file. In the `env.sh` file, add
@@ -38,7 +48,7 @@ export MONGODB_URI="your mongo db uri";
 ```
 Then, in `server.js`, uncomment lines 3, 28, 31, and 39. `source env.sh` in your console and you're good to go.
 
-To add models to work with:
+To add more models to work with:
 1. Add one schema per file to `./backend/models`. See the `user.js` for an example.
 2. Import the schema from the newly created model file in `models.js`.
 3. Create a model using the schema.
@@ -47,10 +57,10 @@ Note: All models are pulled from the `models.js` file, so models must be part of
 
 ## Stack Used
 * Frontend Frameworks
-  * React, Redux, React Router
+  * React, Redux, React Router, Redux Persist
 * Backend Frameworks
   * Express
 * Database Access
   * MongoDB, Mongoose
 * Other
-  * webpack, babel
+  * Webpack, Babel
