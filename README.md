@@ -10,6 +10,7 @@ This is a boilerplate for basic static websites. Other boilerplates I have publi
   * Adding a state changing action
   * Adding MongoDB Integration
 * Stack Used
+* Todos
 
 
 
@@ -68,3 +69,7 @@ Note: All models are pulled from the `models.js` file, so models must be part of
   * MongoDB, Mongoose
 * Other
   * Webpack, Babel
+
+## Todos
+* Make sure persist actually works
+* make sure chrome logging works as it does in Penn QA
