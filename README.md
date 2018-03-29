@@ -36,10 +36,14 @@ Make sure to add a route within `./frontend/containers/AppContainer.js` to rende
 Currently, all css files are funneled through the `base.scss` file. All other scss files are imported into this file. For each distinct component with unique styling, create a new scss file. Inside the component, wrap the contents of the render div with the name of your scss file. For example, if you want to apply certain styles to everything in the NavBar:
 1. Make a `nav.scss` file and add it as an import in `base.scss`
 2. Wrap the entire return div in `NavBar.js` with `<nav><nav \>` tags.
+
 For more general styles, add them to `base.scss` and apply them using the `className` field in html/jsx components.
 
 ### Adding A State Changing Action
-// TODO
+1. Add the desired action as an exported function in a new file in `./frontend/actions/`.
+2. Import and use the action in the relevant component(s). Don't forget to add it to `mapDispatchToProps`.
+3. Add the reducer to a new file in `./frontend/reducers/`.
+4. Import the new reducer file in `./frontend/reducers/index.js` and add it to the `combineReducers` function. Remember to name the new piece of state as you would like to access it.
 
 ### Adding MongoDB Integration
 It's imperative to add an `env.sh` file. These files are already screened from git in the `.gitignore` file. In the `env.sh` file, add
