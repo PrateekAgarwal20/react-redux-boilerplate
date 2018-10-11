@@ -28,7 +28,9 @@ class Home extends React.Component {
 
 Home.propTypes = {}
 
-const mapStateToProps = ({}) => {};
+const mapStateToProps = ({}) => {
+  return {};
+};
 
 const mapDispatchToProps = () => {
   return {};
